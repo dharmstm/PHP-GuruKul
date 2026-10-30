@@ -1,0 +1,958 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Length 2925 >>
+stream
+0.07 0.13 0.27 rg 0.0 582.0 612.0 210.0 re f
+0.85 0.52 0.1 rg 0.0 576.0 612.0 6.0 re f
+q 0.75 0.82 0.95 rg BT /F2 12.0 Tf 219.0 722.0 Td (SECURITY VULNERABILITY REPORT) Tj ET Q
+q 1 1 1 rg BT /F2 21.0 Tf 148.5 684.0 Td (Reflected Cross-Site Scripting) Tj ET Q
+q 1 1 1 rg BT /F2 15.0 Tf 159.8 658.0 Td (admin/search-invoices.php  \(searchdata\)) Tj ET Q
+q 0.8 0.86 0.96 rg BT /F1 12.0 Tf 177.0 626.0 Td (PHPGurukul Beauty Parlour Management System) Tj ET Q
+q 0.85 0.52 0.1 rg BT /F2 10.5 Tf 193.1 606.0 Td (Finding F-NEW-02   \(consolidated: F-NEW-04\)) Tj ET Q
+0.85 0.52 0.1 rg 56.0 516.0 41.5 26.0 re f
+q 1 1 1 rg BT /F2 7.5 Tf 61.0 532.0 Td (SEVERITY) Tj ET Q
+q 1 1 1 rg BT /F2 9.0 Tf 61.0 521.0 Td (LOW-MED) Tj ET Q
+0.23 0.36 0.55 rg 105.5 516.0 40.0 26.0 re f
+q 1 1 1 rg BT /F2 7.5 Tf 110.5 532.0 Td (CVSS 4.0) Tj ET Q
+q 1 1 1 rg BT /F2 9.0 Tf 110.5 521.0 Td (4.8) Tj ET Q
+0.11 0.22 0.44 rg 153.5 516.0 21.2 26.0 re f
+q 1 1 1 rg BT /F2 7.5 Tf 158.5 532.0 Td (CWE) Tj ET Q
+q 1 1 1 rg BT /F2 9.0 Tf 158.5 521.0 Td (79) Tj ET Q
+0.07 0.13 0.27 rg 182.8 516.0 46.0 26.0 re f
+q 1 1 1 rg BT /F2 7.5 Tf 187.8 532.0 Td (OWASP) Tj ET Q
+q 1 1 1 rg BT /F2 9.0 Tf 187.8 521.0 Td (A03:2021) Tj ET Q
+0.9 0.93 0.98 rg 0.8 0.84 0.92 RG 0.6 w 56.0 389.0 500.0 135.0 re B
+q 0.07 0.13 0.27 rg BT /F2 9.5 Tf 68.0 506.0 Td (Vendor / Product) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 9.5 Tf 226.0 506.0 Td (PHPGurukul / Beauty Parlour Management System \(v1.x\)) Tj ET Q
+q 0.07 0.13 0.27 rg BT /F2 9.5 Tf 68.0 489.0 Td (Component) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 9.5 Tf 226.0 489.0 Td (admin/search-invoices.php  -  parameter: searchdata \(POST\)) Tj ET Q
+q 0.07 0.13 0.27 rg BT /F2 9.5 Tf 68.0 472.0 Td (Target) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 9.5 Tf 226.0 472.0 Td (http://localhost/bpms/  \(authorized localhost XAMPP lab\)) Tj ET Q
+q 0.07 0.13 0.27 rg BT /F2 9.5 Tf 68.0 455.0 Td (Assessment date) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 9.5 Tf 226.0 455.0 Td (2026-10-30) Tj ET Q
+q 0.07 0.13 0.27 rg BT /F2 9.5 Tf 68.0 438.0 Td (Report version) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 9.5 Tf 226.0 438.0 Td (1.0) Tj ET Q
+q 0.07 0.13 0.27 rg BT /F2 9.5 Tf 68.0 421.0 Td (Status) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 9.5 Tf 226.0 421.0 Td (DRAFT - reflection confirmed; browser execution not captured \(no browser\)) Tj ET Q
+q 0.07 0.13 0.27 rg BT /F2 9.5 Tf 68.0 404.0 Td (Evidence \(sealed\)) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 9.5 Tf 226.0 404.0 Td (runs/bpms/localhost/1793371241   SEAL 66db30ac...) Tj ET Q
+0.93 0.96 0.93 rg 56.0 325.0 500.0 48.0 re f
+0.13 0.46 0.25 rg 56.0 325.0 3.5 48.0 re f
+q 0.13 0.46 0.25 rg BT /F2 9.5 Tf 68.0 359.0 Td (Scope & authorization) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 9.5 Tf 68.0 345.0 Td (Authorized local lab only; no production or third-party data. Harmless alert\(\) payload; read-only) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 9.5 Tf 68.0 333.0 Td (\(no DB rows\). Session cookies redacted. No CVE claimed.) Tj ET Q
+
+endstream
+endobj
+6 0 obj
+<< /Length 2539 >>
+stream
+0.23 0.36 0.55 RG 0.6 w 56.0 748.0 m 556.0 748.0 l S
+q 0.07 0.13 0.27 rg BT /F2 8 Tf 56.0 752.0 Td (F-NEW-02  Reflected XSS - search-invoices.php) Tj ET Q
+q 0.45 0.47 0.52 rg BT /F1 8 Tf 436.0 752.0 Td (PHPGurukul BPMS - DRAFT) Tj ET Q
+0.23 0.36 0.55 RG 0.6 w 56.0 40 m 556.0 40 l S
+q 0.45 0.47 0.52 rg BT /F1 8 Tf 56.0 30 Td (Confidential - authorized lab assessment) Tj ET Q
+q 0.45 0.47 0.52 rg BT /F1 8 Tf 486.0 30 Td (Page 2 of 7) Tj ET Q
+0.07 0.13 0.27 rg 0 742.0 612.0 50 re f
+q 1 1 1 rg BT /F2 16.0 Tf 56.0 758.0 Td (Table of Contents) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 11.0 Tf 56.0 712.0 Td (1  Executive Summary) Tj ET Q
+q 0.23 0.36 0.55 rg BT /F1 11.0 Tf 542.0 712.0 Td (3) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 11.0 Tf 56.0 692.0 Td (2  Vulnerability Metadata) Tj ET Q
+q 0.23 0.36 0.55 rg BT /F1 11.0 Tf 542.0 692.0 Td (3) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 11.0 Tf 56.0 672.0 Td (3  Scope & Authorization) Tj ET Q
+q 0.23 0.36 0.55 rg BT /F1 11.0 Tf 542.0 672.0 Td (3) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 11.0 Tf 56.0 652.0 Td (4  Attack Flow) Tj ET Q
+q 0.23 0.36 0.55 rg BT /F1 11.0 Tf 542.0 652.0 Td (3) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 11.0 Tf 56.0 632.0 Td (5  Technical Description & Root Cause) Tj ET Q
+q 0.23 0.36 0.55 rg BT /F1 11.0 Tf 542.0 632.0 Td (4) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 11.0 Tf 56.0 612.0 Td (6  Source Code Evidence) Tj ET Q
+q 0.23 0.36 0.55 rg BT /F1 11.0 Tf 542.0 612.0 Td (4) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 11.0 Tf 56.0 592.0 Td (7  Proof of Concept \(authorized lab, non-destructive\)) Tj ET Q
+q 0.23 0.36 0.55 rg BT /F1 11.0 Tf 542.0 592.0 Td (4) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 11.0 Tf 56.0 572.0 Td (8  HTTP Request / Response) Tj ET Q
+q 0.23 0.36 0.55 rg BT /F1 11.0 Tf 542.0 572.0 Td (5) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 11.0 Tf 56.0 552.0 Td (9  Browser Validation Evidence) Tj ET Q
+q 0.23 0.36 0.55 rg BT /F1 11.0 Tf 542.0 552.0 Td (5) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 11.0 Tf 56.0 532.0 Td (10  Impact & CVSS 4.0 Justification) Tj ET Q
+q 0.23 0.36 0.55 rg BT /F1 11.0 Tf 542.0 532.0 Td (5) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 11.0 Tf 56.0 512.0 Td (11  CWE / OWASP & CVE Novelty Comparison) Tj ET Q
+q 0.23 0.36 0.55 rg BT /F1 11.0 Tf 542.0 512.0 Td (6) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 11.0 Tf 56.0 492.0 Td (12  Remediation & Secure Code) Tj ET Q
+q 0.23 0.36 0.55 rg BT /F1 11.0 Tf 542.0 492.0 Td (6) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 11.0 Tf 56.0 472.0 Td (13  Verification, Disclosure & CVE Readiness) Tj ET Q
+q 0.23 0.36 0.55 rg BT /F1 11.0 Tf 542.0 472.0 Td (6) Tj ET Q
+
+endstream
+endobj
+7 0 obj
+<< /Length 5623 >>
+stream
+0.23 0.36 0.55 RG 0.6 w 56.0 748.0 m 556.0 748.0 l S
+q 0.07 0.13 0.27 rg BT /F2 8 Tf 56.0 752.0 Td (F-NEW-02  Reflected XSS - search-invoices.php) Tj ET Q
+q 0.45 0.47 0.52 rg BT /F1 8 Tf 436.0 752.0 Td (PHPGurukul BPMS - DRAFT) Tj ET Q
+0.23 0.36 0.55 RG 0.6 w 56.0 40 m 556.0 40 l S
+q 0.45 0.47 0.52 rg BT /F1 8 Tf 56.0 30 Td (Confidential - authorized lab assessment) Tj ET Q
+q 0.45 0.47 0.52 rg BT /F1 8 Tf 486.0 30 Td (Page 3 of 7) Tj ET Q
+0.11 0.22 0.44 rg 50.0 707.0 3.0 19.0 re f
+q 0.07 0.13 0.27 rg BT /F2 14.5 Tf 60.0 710.0 Td (1  Executive Summary) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 686.0 Td (The admin invoice-search page echoes the attacker-controlled searchdata value back into the HTML) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 672.6 Td (response without output encoding. A value like <script>alert\('F-NEW-02-XSS'\)</script> is reflected) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 659.2 Td (verbatim into a server-rendered HTML text context, so it executes when an administrator's browser) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 645.8 Td (renders the page.) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 630.4 Td (Exploitation needs an authenticated admin session, but BPMS enforces no CSRF token and sets no) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 617.0 Td (SameSite on its session cookie, so a malicious page can auto-submit this POST in a logged-in admin's) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 603.6 Td (browser and fire the payload in the admin origin.) Tj ET Q
+0.9 0.93 0.98 rg 56.0 538.2 500.0 60.0 re f
+0.11 0.22 0.44 rg 56.0 538.2 3.5 60.0 re f
+q 0.07 0.13 0.27 rg BT /F2 9.5 Tf 68.0 584.2 Td (Honest status) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 9.5 Tf 68.0 570.2 Td (Confirmed: unescaped reflection in a server-rendered script context \(raw HTTP response, line 230\).) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 9.5 Tf 68.0 558.2 Td (Not captured: live browser execution \(no browser in the lab\). Execution is highly likely by standard) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 9.5 Tf 68.0 546.2 Td (analysis but is reported as unobserved.) Tj ET Q
+0.11 0.22 0.44 rg 50.0 511.2 3.0 19.0 re f
+q 0.07 0.13 0.27 rg BT /F2 14.5 Tf 60.0 514.2 Td (2  Vulnerability Metadata) Tj ET Q
+0.11 0.22 0.44 rg 56.0 483.0 500.0 17.2 re f
+0.7 0.74 0.8 RG 0.5 w 56.0 483.0 125.0 17.2 re S
+q 1 1 1 rg BT /F2 8.6 Tf 60.0 488.6 Td (Field) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 181.0 483.0 375.0 17.2 re S
+q 1 1 1 rg BT /F2 8.6 Tf 185.0 488.6 Td (Value) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 465.8 125.0 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 471.4 Td (Finding ID) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 181.0 465.8 375.0 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 185.0 471.4 Td (F-NEW-02 \(consolidated: F-NEW-04\)) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 448.7 125.0 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 454.2 Td (Class / CWE) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 181.0 448.7 375.0 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 185.0 454.2 Td (Reflected XSS / CWE-79) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 431.5 125.0 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 437.1 Td (OWASP 2021) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 181.0 431.5 375.0 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 185.0 437.1 Td (A03 Injection) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 414.3 125.0 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 419.9 Td (Method / parameter) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 181.0 414.3 375.0 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 185.0 419.9 Td (POST / searchdata \(gated on isset\($_POST['search']\)\)) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 397.1 125.0 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 402.7 Td (Reflection point) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 181.0 397.1 375.0 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 185.0 402.7 Td (admin/search-invoices.php:81 \(HTML text context\)) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 379.9 125.0 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 385.5 Td (Authentication) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 181.0 379.9 375.0 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 185.0 385.5 Td (Required - admin session \(guard at line 5\)) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 362.8 125.0 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 368.3 Td (Delivery) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 181.0 362.8 375.0 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 185.0 368.3 Td (Cross-site auto-submit POST \(no CSRF token, no SameSite\)) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 345.6 125.0 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 351.2 Td (CVSS 4.0) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 181.0 345.6 375.0 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 185.0 351.2 Td (AV:N/AC:L/AT:N/PR:H/UI:A/VC:L/VI:L/VA:N  \(~4.8\)) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 328.4 125.0 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 334.0 Td (Reproduction) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 181.0 328.4 375.0 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 185.0 334.0 Td (Reflection confirmed unescaped; browser execution not captured) Tj ET Q
+0.11 0.22 0.44 rg 50.0 301.4 3.0 19.0 re f
+q 0.07 0.13 0.27 rg BT /F2 14.5 Tf 60.0 304.4 Td (3  Scope & Authorization) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 280.4 Td (All testing used an authorized, owner-controlled local lab and lab test credentials. No production) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 267.0 Td (system, third-party host, or real user data was involved. The PoC uses a harmless alert\(\) and is) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 253.6 Td (read-only. Session cookies are redacted. No CVE is claimed.) Tj ET Q
+q 0.11 0.22 0.44 rg BT /F2 11.5 Tf 56.0 235.2 Td (Attack flow \(CSRF-delivered reflected XSS\)) Tj ET Q
+
+endstream
+endobj
+8 0 obj
+<< /Length 11645 >>
+stream
+0.23 0.36 0.55 RG 0.6 w 56.0 748.0 m 556.0 748.0 l S
+q 0.07 0.13 0.27 rg BT /F2 8 Tf 56.0 752.0 Td (F-NEW-02  Reflected XSS - search-invoices.php) Tj ET Q
+q 0.45 0.47 0.52 rg BT /F1 8 Tf 436.0 752.0 Td (PHPGurukul BPMS - DRAFT) Tj ET Q
+0.23 0.36 0.55 RG 0.6 w 56.0 40 m 556.0 40 l S
+q 0.45 0.47 0.52 rg BT /F1 8 Tf 56.0 30 Td (Confidential - authorized lab assessment) Tj ET Q
+q 0.45 0.47 0.52 rg BT /F1 8 Tf 486.0 30 Td (Page 4 of 7) Tj ET Q
+0.96 0.97 1.0 rg 0.11 0.22 0.44 RG 1.1 w 91.0 704.0 430.0 24.0 re B
+0.11 0.22 0.44 rg 91.0 704.0 4.0 24.0 re f
+q 0.07 0.13 0.27 rg BT /F2 8.6 Tf 103.0 712.0 Td (1. Attacker hosts auto-submitting POST form) Tj ET Q
+0.11 0.22 0.44 RG 1.1 w 306.0 704.0 m 306.0 694.0 l S
+0.11 0.22 0.44 rg 303.0 694.0 m 309.0 694.0 l 306.0 689.0 l f
+0.96 0.97 1.0 rg 0.11 0.22 0.44 RG 1.1 w 91.0 664.0 430.0 24.0 re B
+0.11 0.22 0.44 rg 91.0 664.0 4.0 24.0 re f
+q 0.07 0.13 0.27 rg BT /F2 8.6 Tf 103.0 672.0 Td (2. Authenticated admin visits attacker page) Tj ET Q
+0.11 0.22 0.44 RG 1.1 w 306.0 664.0 m 306.0 654.0 l S
+0.11 0.22 0.44 rg 303.0 654.0 m 309.0 654.0 l 306.0 649.0 l f
+0.96 0.97 1.0 rg 0.85 0.52 0.1 RG 1.1 w 91.0 624.0 430.0 24.0 re B
+0.85 0.52 0.1 rg 91.0 624.0 4.0 24.0 re f
+q 0.07 0.13 0.27 rg BT /F2 8.6 Tf 103.0 632.0 Td (3. Browser sends admin PHPSESSID cross-site \(no CSRF token, no SameSite\)) Tj ET Q
+0.85 0.52 0.1 RG 1.1 w 306.0 624.0 m 306.0 614.0 l S
+0.85 0.52 0.1 rg 303.0 614.0 m 309.0 614.0 l 306.0 609.0 l f
+0.96 0.97 1.0 rg 0.85 0.52 0.1 RG 1.1 w 91.0 584.0 430.0 24.0 re B
+0.85 0.52 0.1 rg 91.0 584.0 4.0 24.0 re f
+q 0.07 0.13 0.27 rg BT /F2 8.6 Tf 103.0 592.0 Td (4. POST search-invoices.php searchdata=<script>...</script>) Tj ET Q
+0.85 0.52 0.1 RG 1.1 w 306.0 584.0 m 306.0 574.0 l S
+0.85 0.52 0.1 rg 303.0 574.0 m 309.0 574.0 l 306.0 569.0 l f
+0.96 0.97 1.0 rg 0.74 0.16 0.16 RG 1.1 w 91.0 544.0 430.0 24.0 re B
+0.74 0.16 0.16 rg 91.0 544.0 4.0 24.0 re f
+q 0.07 0.13 0.27 rg BT /F2 8.6 Tf 103.0 552.0 Td (5. Server reflects payload UNESCAPED in HTML text \(line 81\)) Tj ET Q
+0.74 0.16 0.16 RG 1.1 w 306.0 544.0 m 306.0 534.0 l S
+0.74 0.16 0.16 rg 303.0 534.0 m 309.0 534.0 l 306.0 529.0 l f
+0.96 0.97 1.0 rg 0.74 0.16 0.16 RG 1.1 w 91.0 504.0 430.0 24.0 re B
+0.74 0.16 0.16 rg 91.0 504.0 4.0 24.0 re f
+q 0.07 0.13 0.27 rg BT /F2 8.6 Tf 103.0 512.0 Td (6. Script executes in admin origin -> actions as admin) Tj ET Q
+0.11 0.22 0.44 rg 50.0 479.0 3.0 19.0 re f
+q 0.07 0.13 0.27 rg BT /F2 14.5 Tf 60.0 482.0 Td (5  Technical Description & Root Cause) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 458.0 Td (When the search form is submitted \(isset\($_POST['search']\)\), the page prints a heading echoing the) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 444.6 Td (submitted term and then runs the lookup. The echo performs no HTML encoding, so markup in searchdata) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 431.2 Td (becomes live markup. The context is HTML text \(between literal quotes in visible text\), so <script>) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 417.8 Td (or <img onerror=...> executes. Reflection happens before/independent of whether any invoice matches.) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 402.4 Td (Root cause: missing context-aware output encoding on render - an instance of the product's systemic) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 389.0 Td ('echo user/DB data unescaped' pattern. Independent of the SQLi on the same parameter \(which is a) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 375.6 Td (failure to parameterize the query\).) Tj ET Q
+0.11 0.22 0.44 rg 50.0 349.2 3.0 19.0 re f
+q 0.07 0.13 0.27 rg BT /F2 14.5 Tf 60.0 352.2 Td (6  Source Code Evidence) Tj ET Q
+0.95 0.96 0.99 rg 0.8 0.84 0.92 RG 0.6 w 56.0 257.0 500.0 81.2 re B
+0.23 0.36 0.55 rg 56.0 257.0 3.0 81.2 re f
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 63.0 322.9 Td (5) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 68.0 322.9 Td (:   ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 87.9 322.9 Td (if) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 97.9 322.9 Td ( \() Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 107.8 322.9 Td (strlen) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 137.7 322.9 Td (\($) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 147.7 322.9 Td (_SESSION) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 187.5 322.9 Td ([) Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 192.5 322.9 Td ('bpmsaid') Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 237.3 322.9 Td (]==) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 252.2 322.9 Td (0) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 257.2 322.9 Td (\)\) {        ) Tj ET Q
+q 0.45 0.47 0.52 rg BT /F4 8.3 Tf 317.0 322.9 Td (// admin-session guard \(auth required\)) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 63.0 311.7 Td (76) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 73.0 311.7 Td (:  ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 87.9 311.7 Td (if) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 97.9 311.7 Td (\() Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 102.8 311.7 Td (isset) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 127.7 311.7 Td (\($) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 137.7 311.7 Td (_POST) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 162.6 311.7 Td ([) Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 167.6 311.7 Td ('search') Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 207.4 311.7 Td (]\)\) {) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 63.0 300.5 Td (79) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 73.0 300.5 Td (:    $) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 102.8 300.5 Td (sdata) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 127.7 300.5 Td (=$) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 137.7 300.5 Td (_POST) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 162.6 300.5 Td ([) Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 167.6 300.5 Td ('searchdata') Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 227.3 300.5 Td (];                 ) Tj ET Q
+q 0.45 0.47 0.52 rg BT /F4 8.3 Tf 322.0 300.5 Td (// user input, no validation) Tj ET Q
+1.0 0.93 0.68 rg 60.0 286.8 492.0 11.2 re f
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 63.0 289.3 Td (81) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 73.0 289.3 Td (:    <) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 102.8 289.3 Td (h4) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 112.8 289.3 Td (>) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 117.8 289.3 Td (Result) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 147.7 289.3 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 152.6 289.3 Td (against) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 187.5 289.3 Td ( ) Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 192.5 289.3 Td ("<?php echo $sdata;?>") Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 302.0 289.3 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 307.0 289.3 Td (keyword) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 341.9 289.3 Td (</) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 351.8 289.3 Td (h4) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 361.8 289.3 Td (>   ) Tj ET Q
+q 0.45 0.47 0.52 rg BT /F4 8.3 Tf 381.7 289.3 Td (// REFLECTED, UNESCAPED \(sink\)) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 63.0 278.1 Td (93) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 73.0 278.1 Td (:    ... ) Tj ET Q
+q 0.1 0.25 0.75 rg BT /F4 8.3 Tf 117.8 278.1 Td (where) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 142.7 278.1 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 147.7 278.1 Td (tblinvoice) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 197.5 278.1 Td (.) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 202.4 278.1 Td (BillingId) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 247.3 278.1 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 252.2 278.1 Td (like) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 272.2 278.1 Td ( ) Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 277.1 278.1 Td ('%$sdata%') Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 326.9 278.1 Td ( ...        ) Tj ET Q
+q 0.45 0.47 0.52 rg BT /F4 8.3 Tf 386.7 278.1 Td (// same param -> SQLi \(CVE-2025-) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 63.0 266.9 Td (11507) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 87.9 266.9 Td (\)) Tj ET Q
+0.11 0.22 0.44 rg 50.0 230.0 3.0 19.0 re f
+q 0.07 0.13 0.27 rg BT /F2 14.5 Tf 60.0 233.0 Td (7  Proof of Concept \(authorized lab, non-destructive\)) Tj ET Q
+q 0.11 0.22 0.44 rg BT /F2 11.5 Tf 56.0 206.0 Td (Step 1 - Authenticate as administrator) Tj ET Q
+0.95 0.96 0.99 rg 0.8 0.84 0.92 RG 0.6 w 56.0 151.4 500.0 47.6 re B
+0.23 0.36 0.55 rg 56.0 151.4 3.0 47.6 re f
+q 0.1 0.25 0.75 rg BT /F4 8.3 Tf 63.0 183.7 Td (curl) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 82.9 183.7 Td ( -) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 92.9 183.7 Td (s) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 97.9 183.7 Td ( -) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 107.8 183.7 Td (c) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 112.8 183.7 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 117.8 183.7 Td (admin) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 142.7 183.7 Td (.) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 147.7 183.7 Td (jar) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 162.6 183.7 Td ( -) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 172.6 183.7 Td (b) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 177.5 183.7 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 182.5 183.7 Td (admin) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 207.4 183.7 Td (.) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 212.4 183.7 Td (jar) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 227.3 183.7 Td ( -) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 237.3 183.7 Td (o) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 242.3 183.7 Td ( /) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 252.2 183.7 Td (dev) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 267.2 183.7 Td (/) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 272.2 183.7 Td (null) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 292.1 183.7 Td ( -) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 302.0 183.7 Td (w) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 307.0 183.7 Td ( ) Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 312.0 183.7 Td ('login HTTP %{http_code}\\n') Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 446.5 183.7 Td ( \\) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 63.0 172.5 Td (  --) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 82.9 172.5 Td (data) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 102.8 172.5 Td ( ) Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 107.8 172.5 Td ('username=admin&password=Test@123&login=') Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 312.0 172.5 Td ( \\) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 63.0 161.3 Td (  ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 73.0 161.3 Td (http) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 92.9 161.3 Td (://) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 107.8 161.3 Td (localhost) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 152.6 161.3 Td (/) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 157.6 161.3 Td (bpms) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 177.5 161.3 Td (/) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 182.5 161.3 Td (admin) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 207.4 161.3 Td (/) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 212.4 161.3 Td (index) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 237.3 161.3 Td (.) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 242.3 161.3 Td (php) Tj ET Q
+0.95 0.96 0.99 rg 0.8 0.84 0.92 RG 0.6 w 56.0 108.2 500.0 37.2 re B
+0.23 0.36 0.55 rg 56.0 108.2 3.0 37.2 re f
+q 0.23 0.36 0.55 rg BT /F2 8.0 Tf 63.0 130.1 Td (output) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 63.0 118.1 Td (login) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 87.9 118.1 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 92.9 118.1 Td (HTTP) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 112.8 118.1 Td ( ) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 117.8 118.1 Td (302) Tj ET Q
+q 0.11 0.22 0.44 rg BT /F2 11.5 Tf 56.0 89.2 Td (Step 2 - Submit the harmless payload \(POST\)) Tj ET Q
+
+endstream
+endobj
+9 0 obj
+<< /Length 20795 >>
+stream
+0.23 0.36 0.55 RG 0.6 w 56.0 748.0 m 556.0 748.0 l S
+q 0.07 0.13 0.27 rg BT /F2 8 Tf 56.0 752.0 Td (F-NEW-02  Reflected XSS - search-invoices.php) Tj ET Q
+q 0.45 0.47 0.52 rg BT /F1 8 Tf 436.0 752.0 Td (PHPGurukul BPMS - DRAFT) Tj ET Q
+0.23 0.36 0.55 RG 0.6 w 56.0 40 m 556.0 40 l S
+q 0.45 0.47 0.52 rg BT /F1 8 Tf 56.0 30 Td (Confidential - authorized lab assessment) Tj ET Q
+q 0.45 0.47 0.52 rg BT /F1 8 Tf 486.0 30 Td (Page 5 of 7) Tj ET Q
+0.95 0.96 0.99 rg 0.8 0.84 0.92 RG 0.6 w 56.0 669.2 500.0 58.8 re B
+0.23 0.36 0.55 rg 56.0 669.2 3.0 58.8 re f
+q 0.1 0.25 0.75 rg BT /F4 8.3 Tf 63.0 712.7 Td (curl) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 82.9 712.7 Td ( -) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 92.9 712.7 Td (s) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 97.9 712.7 Td ( -) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 107.8 712.7 Td (b) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 112.8 712.7 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 117.8 712.7 Td (admin) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 142.7 712.7 Td (.) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 147.7 712.7 Td (jar) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 162.6 712.7 Td ( -) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 172.6 712.7 Td (o) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 177.5 712.7 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 182.5 712.7 Td (resp) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 202.4 712.7 Td (.) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 207.4 712.7 Td (html) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 227.3 712.7 Td ( \\) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 63.0 701.5 Td (  --) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 82.9 701.5 Td (data) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 102.8 701.5 Td (-) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 107.8 701.5 Td (urlencode) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 152.6 701.5 Td ( ) Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 157.6 701.5 Td ("searchdata=<script>alert\('F-NEW-02-XSS'\)</script>") Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 411.6 701.5 Td ( --) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 426.5 701.5 Td (data) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 446.5 701.5 Td ( ) Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 451.4 701.5 Td ('search=') Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 496.3 701.5 Td ( \\) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 63.0 690.3 Td (  ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 73.0 690.3 Td (http) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 92.9 690.3 Td (://) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 107.8 690.3 Td (localhost) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 152.6 690.3 Td (/) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 157.6 690.3 Td (bpms) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 177.5 690.3 Td (/) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 182.5 690.3 Td (admin) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 207.4 690.3 Td (/) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 212.4 690.3 Td (search) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 242.3 690.3 Td (-) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 247.3 690.3 Td (invoices) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 287.1 690.3 Td (.) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 292.1 690.3 Td (php) Tj ET Q
+q 0.1 0.25 0.75 rg BT /F4 8.3 Tf 63.0 679.1 Td (grep) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 82.9 679.1 Td ( -) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 92.9 679.1 Td (n) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 97.9 679.1 Td ( ) Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 102.8 679.1 Td ('Result against') Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 182.5 679.1 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 187.5 679.1 Td (resp) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 207.4 679.1 Td (.) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 212.4 679.1 Td (html) Tj ET Q
+0.95 0.96 0.99 rg 0.8 0.84 0.92 RG 0.6 w 56.0 626.0 500.0 37.2 re B
+0.23 0.36 0.55 rg 56.0 626.0 3.0 37.2 re f
+q 0.23 0.36 0.55 rg BT /F2 8.0 Tf 63.0 647.9 Td (output - payload reflected VERBATIM and UNESCAPED) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 63.0 635.9 Td (230) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 77.9 635.9 Td (:  <) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 97.9 635.9 Td (h4) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 107.8 635.9 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 112.8 635.9 Td (align) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 137.7 635.9 Td (=) Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 142.7 635.9 Td ("center") Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 182.5 635.9 Td (>) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 187.5 635.9 Td (Result) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 217.4 635.9 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 222.4 635.9 Td (against) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 257.2 635.9 Td ( ) Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 262.2 635.9 Td ("<script>alert\('F-NEW-02-XSS'\)</script>") Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 461.4 635.9 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 466.4 635.9 Td (keyword) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 501.2 635.9 Td ( </) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 516.2 635.9 Td (h4) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 526.1 635.9 Td (>) Tj ET Q
+q 0.11 0.22 0.44 rg BT /F2 11.5 Tf 56.0 607.0 Td (Step 3 - Negative/control check) Tj ET Q
+0.95 0.96 0.99 rg 0.8 0.84 0.92 RG 0.6 w 56.0 552.4 500.0 47.6 re B
+0.23 0.36 0.55 rg 56.0 552.4 3.0 47.6 re f
+q 0.1 0.25 0.75 rg BT /F4 8.3 Tf 63.0 584.7 Td (curl) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 82.9 584.7 Td ( -) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 92.9 584.7 Td (s) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 97.9 584.7 Td ( -) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 107.8 584.7 Td (b) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 112.8 584.7 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 117.8 584.7 Td (admin) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 142.7 584.7 Td (.) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 147.7 584.7 Td (jar) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 162.6 584.7 Td ( --) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 177.5 584.7 Td (data) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 197.5 584.7 Td (-) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 202.4 584.7 Td (urlencode) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 247.3 584.7 Td ( ) Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 252.2 584.7 Td ('searchdata=BENIGN_MARKER_12345') Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 411.6 584.7 Td ( --) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 426.5 584.7 Td (data) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 446.5 584.7 Td ( ) Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 451.4 584.7 Td ('search=') Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 496.3 584.7 Td ( \\) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 63.0 573.5 Td (  ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 73.0 573.5 Td (http) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 92.9 573.5 Td (://) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 107.8 573.5 Td (localhost) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 152.6 573.5 Td (/) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 157.6 573.5 Td (bpms) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 177.5 573.5 Td (/) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 182.5 573.5 Td (admin) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 207.4 573.5 Td (/) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 212.4 573.5 Td (search) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 242.3 573.5 Td (-) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 247.3 573.5 Td (invoices) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 287.1 573.5 Td (.) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 292.1 573.5 Td (php) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 307.0 573.5 Td ( | ) Tj ET Q
+q 0.1 0.25 0.75 rg BT /F4 8.3 Tf 322.0 573.5 Td (grep) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 341.9 573.5 Td ( -) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 351.8 573.5 Td (o) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 356.8 573.5 Td ( ') Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 366.8 573.5 Td (Result) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 396.7 573.5 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 401.6 573.5 Td (against) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 436.5 573.5 Td ( ) Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 441.5 573.5 Td ("BENIGN_MARKER_12345") Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 63.0 562.3 Td (') Tj ET Q
+0.95 0.96 0.99 rg 0.8 0.84 0.92 RG 0.6 w 56.0 498.0 500.0 48.4 re B
+0.23 0.36 0.55 rg 56.0 498.0 3.0 48.4 re f
+q 0.23 0.36 0.55 rg BT /F2 8.0 Tf 63.0 531.1 Td (output) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 63.0 519.1 Td (Result) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 92.9 519.1 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 97.9 519.1 Td (against) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 132.7 519.1 Td ( ) Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 137.7 519.1 Td ("BENIGN_MARKER_12345") Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 63.0 507.9 Td (\() Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 68.0 507.9 Td (0) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 73.0 507.9 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 77.9 507.9 Td (HTML) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 97.9 507.9 Td (-) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 102.8 507.9 Td (entity) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 132.7 507.9 Td (-) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 137.7 507.9 Td (encoded) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 172.6 507.9 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 177.5 507.9 Td (variants) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 217.4 507.9 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 222.4 507.9 Td (present) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 257.2 507.9 Td ( -> ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 277.1 507.9 Td (server) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 307.0 507.9 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 312.0 507.9 Td (does) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 331.9 507.9 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 336.9 507.9 Td (NO) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 346.9 507.9 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 351.8 507.9 Td (output) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 381.7 507.9 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 386.7 507.9 Td (encoding) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 426.5 507.9 Td (\)) Tj ET Q
+0.11 0.22 0.44 rg 50.0 471.0 3.0 19.0 re f
+q 0.07 0.13 0.27 rg BT /F2 14.5 Tf 60.0 474.0 Td (8  HTTP Request / Response) Tj ET Q
+0.95 0.96 0.99 rg 0.8 0.84 0.92 RG 0.6 w 56.0 366.8 500.0 93.2 re B
+0.23 0.36 0.55 rg 56.0 366.8 3.0 93.2 re f
+q 0.23 0.36 0.55 rg BT /F2 8.0 Tf 63.0 444.7 Td (request) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 63.0 432.7 Td (POST) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 82.9 432.7 Td ( /) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 92.9 432.7 Td (bpms) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 112.8 432.7 Td (/) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 117.8 432.7 Td (admin) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 142.7 432.7 Td (/) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 147.7 432.7 Td (search) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 177.5 432.7 Td (-) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 182.5 432.7 Td (invoices) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 222.4 432.7 Td (.) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 227.3 432.7 Td (php) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 242.3 432.7 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 247.3 432.7 Td (HTTP) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 267.2 432.7 Td (/) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 272.2 432.7 Td (1) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 277.1 432.7 Td (.) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 282.1 432.7 Td (1) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 63.0 421.5 Td (Host) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 82.9 421.5 Td (: ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 92.9 421.5 Td (localhost) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 63.0 410.3 Td (Content) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 97.9 410.3 Td (-) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 102.8 410.3 Td (Type) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 122.8 410.3 Td (: ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 132.7 410.3 Td (application) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 187.5 410.3 Td (/) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 192.5 410.3 Td (x) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 197.5 410.3 Td (-) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 202.4 410.3 Td (www) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 217.4 410.3 Td (-) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 222.4 410.3 Td (form) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 242.3 410.3 Td (-) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 247.3 410.3 Td (urlencoded) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 63.0 399.1 Td (Cookie) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 92.9 399.1 Td (: ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 102.8 399.1 Td (PHPSESSID) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 147.7 399.1 Td (=<) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 157.6 399.1 Td (REDACTED_ADMIN_SESSION) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 267.2 399.1 Td (>) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 63.0 376.7 Td (searchdata) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 112.8 376.7 Td (=%) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 122.8 376.7 Td (3Cscript) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 162.6 376.7 Td (%) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 167.6 376.7 Td (3Ealert) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 202.4 376.7 Td (\() Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 207.4 376.7 Td ('F-NEW-02-XSS') Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 277.1 376.7 Td (\)%) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 287.1 376.7 Td (3C) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 297.1 376.7 Td (%) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 302.0 376.7 Td (2Fscript) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 341.9 376.7 Td (%) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 346.9 376.7 Td (3E) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 356.8 376.7 Td (&) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 361.8 376.7 Td (search) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 391.7 376.7 Td (=) Tj ET Q
+0.95 0.96 0.99 rg 0.8 0.84 0.92 RG 0.6 w 56.0 278.8 500.0 82.0 re B
+0.23 0.36 0.55 rg 56.0 278.8 3.0 82.0 re f
+q 0.23 0.36 0.55 rg BT /F2 8.0 Tf 63.0 345.5 Td (response \(line 230\)) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 63.0 333.5 Td (HTTP) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 82.9 333.5 Td (/) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 87.9 333.5 Td (1) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 92.9 333.5 Td (.) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 97.9 333.5 Td (1) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 102.8 333.5 Td ( ) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 107.8 333.5 Td (200) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 122.8 333.5 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 127.7 333.5 Td (OK) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 63.0 322.3 Td (Content) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 97.9 322.3 Td (-) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 102.8 322.3 Td (Type) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 122.8 322.3 Td (: ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 132.7 322.3 Td (text) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 152.6 322.3 Td (/) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 157.6 322.3 Td (html) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 177.5 322.3 Td (; ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 187.5 322.3 Td (charset) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 222.4 322.3 Td (=) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 227.3 322.3 Td (UTF) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 242.3 322.3 Td (-) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 247.3 322.3 Td (8) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 63.0 311.1 Td (Server) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 92.9 311.1 Td (: ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 102.8 311.1 Td (Apache) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 132.7 311.1 Td (/) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 137.7 311.1 Td (2) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 142.7 311.1 Td (.) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 147.7 311.1 Td (4) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 152.6 311.1 Td (.) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 157.6 311.1 Td (58) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 167.6 311.1 Td ( \() Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 177.5 311.1 Td (Unix) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 197.5 311.1 Td (\) ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 207.4 311.1 Td (OpenSSL) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 242.3 311.1 Td (/) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 247.3 311.1 Td (1) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 252.2 311.1 Td (.) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 257.2 311.1 Td (1) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 262.2 311.1 Td (.) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 267.2 311.1 Td (1w) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 277.1 311.1 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 282.1 311.1 Td (PHP) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 297.1 311.1 Td (/) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 302.0 311.1 Td (8) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 307.0 311.1 Td (.) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 312.0 311.1 Td (2) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 317.0 311.1 Td (.) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 322.0 311.1 Td (12) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 331.9 311.1 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 336.9 311.1 Td (mod_perl) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 376.7 311.1 Td (/) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 381.7 311.1 Td (2) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 386.7 311.1 Td (.) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 391.7 311.1 Td (0) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 396.7 311.1 Td (.) Tj ET Q
+q 0.6 0.3 0.0 rg BT /F4 8.3 Tf 401.6 311.1 Td (12) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 63.0 288.7 Td (<) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 68.0 288.7 Td (h4) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 77.9 288.7 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 82.9 288.7 Td (align) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 107.8 288.7 Td (=) Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 112.8 288.7 Td ("center") Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 152.6 288.7 Td (>) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 157.6 288.7 Td (Result) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 187.5 288.7 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 192.5 288.7 Td (against) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 227.3 288.7 Td ( ) Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 232.3 288.7 Td ("<script>alert\('F-NEW-02-XSS'\)</script>") Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 431.5 288.7 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 436.5 288.7 Td (keyword) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 471.4 288.7 Td ( </) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 486.3 288.7 Td (h4) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 496.3 288.7 Td (>) Tj ET Q
+0.11 0.22 0.44 rg 50.0 251.8 3.0 19.0 re f
+q 0.07 0.13 0.27 rg BT /F2 14.5 Tf 60.0 254.8 Td (9  Browser Validation Evidence) Tj ET Q
+0.99 0.96 0.9 rg 56.0 144.8 500.0 96.0 re f
+0.85 0.52 0.1 rg 56.0 144.8 3.5 96.0 re f
+q 0.85 0.52 0.1 rg BT /F2 9.5 Tf 68.0 226.8 Td (No screenshot captured - and none fabricated) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 9.5 Tf 68.0 212.8 Td (No headless browser is installed \(Playwright/Chromium\), so a rendered alert\(\) could not be captured) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 9.5 Tf 68.0 200.8 Td (without inventing it. The payload is confirmed reflected UNESCAPED in a server-rendered HTML text) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 9.5 Tf 68.0 188.8 Td (context \(raw response, line 230\) - the condition for execution in a standards browser. Reported as) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 9.5 Tf 68.0 176.8 Td (confirmed unescaped reflection with browser execution highly likely but NOT directly verified. A) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 9.5 Tf 68.0 164.8 Td (reviewer with a browser should submit the Step-2 request from an admin session and observe the) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 9.5 Tf 68.0 152.8 Td (alert\(\).) Tj ET Q
+0.11 0.22 0.44 rg 50.0 117.8 3.0 19.0 re f
+q 0.07 0.13 0.27 rg BT /F2 14.5 Tf 60.0 120.8 Td (10  Impact & CVSS 4.0 Justification) Tj ET Q
+0.11 0.22 0.44 rg 56.0 89.6 500.0 17.2 re f
+0.7 0.74 0.8 RG 0.5 w 56.0 89.6 79.5 17.2 re S
+q 1 1 1 rg BT /F2 8.6 Tf 60.0 95.2 Td (Metric) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 135.5 89.6 102.3 17.2 re S
+q 1 1 1 rg BT /F2 8.6 Tf 139.5 95.2 Td (Value) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 237.8 89.6 318.2 17.2 re S
+q 1 1 1 rg BT /F2 8.6 Tf 241.8 95.2 Td (Justification) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 72.4 79.5 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 78.0 Td (AV) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 135.5 72.4 102.3 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 139.5 78.0 Td (Network) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 237.8 72.4 318.2 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 241.8 78.0 Td (Reachable over HTTP) Tj ET Q
+
+endstream
+endobj
+10 0 obj
+<< /Length 10905 >>
+stream
+0.23 0.36 0.55 RG 0.6 w 56.0 748.0 m 556.0 748.0 l S
+q 0.07 0.13 0.27 rg BT /F2 8 Tf 56.0 752.0 Td (F-NEW-02  Reflected XSS - search-invoices.php) Tj ET Q
+q 0.45 0.47 0.52 rg BT /F1 8 Tf 436.0 752.0 Td (PHPGurukul BPMS - DRAFT) Tj ET Q
+0.23 0.36 0.55 RG 0.6 w 56.0 40 m 556.0 40 l S
+q 0.45 0.47 0.52 rg BT /F1 8 Tf 56.0 30 Td (Confidential - authorized lab assessment) Tj ET Q
+q 0.45 0.47 0.52 rg BT /F1 8 Tf 486.0 30 Td (Page 6 of 7) Tj ET Q
+0.11 0.22 0.44 rg 56.0 710.8 500.0 17.2 re f
+0.7 0.74 0.8 RG 0.5 w 56.0 710.8 79.5 17.2 re S
+q 1 1 1 rg BT /F2 8.6 Tf 60.0 716.4 Td (Metric) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 135.5 710.8 102.3 17.2 re S
+q 1 1 1 rg BT /F2 8.6 Tf 139.5 716.4 Td (Value) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 237.8 710.8 318.2 17.2 re S
+q 1 1 1 rg BT /F2 8.6 Tf 241.8 716.4 Td (Justification) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 693.6 79.5 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 699.2 Td (AC) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 135.5 693.6 102.3 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 139.5 699.2 Td (Low) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 237.8 693.6 318.2 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 241.8 699.2 Td (Single deterministic POST) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 676.5 79.5 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 682.0 Td (PR) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 135.5 676.5 102.3 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 139.5 682.0 Td (High) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 237.8 676.5 318.2 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 241.8 682.0 Td (A valid ADMIN session must exist \(sink is admin-only\)) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 659.3 79.5 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 664.9 Td (UI) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 135.5 659.3 102.3 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 139.5 664.9 Td (Active) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 237.8 659.3 318.2 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 241.8 664.9 Td (Admin must load attacker content \(auto-submit form\)) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 642.1 79.5 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 647.7 Td (VC / VI) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 135.5 642.1 102.3 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 139.5 647.7 Td (Low / Low) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 237.8 642.1 318.2 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 241.8 647.7 Td (Script in admin origin; UI-bounded effect) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 624.9 79.5 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 630.5 Td (VA) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 135.5 624.9 102.3 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 139.5 630.5 Td (None) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 237.8 624.9 318.2 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 241.8 630.5 Td (No availability impact) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 9.2 Tf 56.0 609.7 Td (Vector: CVSS:4.0/AV:N/AC:L/AT:N/PR:H/UI:A/VC:L/VI:L/VA:N  ~ 4.8 \(Medium\). Drops to Low with SameSite) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 9.2 Tf 56.0 597.4 Td (\(delivery becomes self-XSS\); rises if combined with the missing HttpOnly \(prior F-11\) to steal the admin) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 9.2 Tf 56.0 585.1 Td (session.) Tj ET Q
+0.11 0.22 0.44 rg 50.0 558.9 3.0 19.0 re f
+q 0.07 0.13 0.27 rg BT /F2 14.5 Tf 60.0 561.9 Td (11  CWE / OWASP & CVE Novelty Comparison) Tj ET Q
+0.11 0.22 0.44 rg 56.0 530.8 500.0 17.2 re f
+0.7 0.74 0.8 RG 0.5 w 56.0 530.8 119.6 17.2 re S
+q 1 1 1 rg BT /F2 8.6 Tf 60.0 536.3 Td (Reference) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 175.6 530.8 173.9 17.2 re S
+q 1 1 1 rg BT /F2 8.6 Tf 179.6 536.3 Td (Covers) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 349.5 530.8 206.5 17.2 re S
+q 1 1 1 rg BT /F2 8.6 Tf 353.5 536.3 Td (Relationship) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 502.4 119.6 28.4 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 519.2 Td (CVE-2025-11507) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 175.6 502.4 173.9 28.4 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 179.6 519.2 Td (SQLi in search-invoices.php) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 179.6 508.0 Td (\(searchdata\)) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 349.5 502.4 206.5 28.4 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 353.5 519.2 Td (Same param, different class \(CWE-89\)) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 474.0 119.6 28.4 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 490.8 Td (CVE-2021-27544) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 175.6 474.0 173.9 28.4 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 179.6 490.8 Td (Reflected XSS in add-services.php) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 179.6 479.6 Td (\(sername\)) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 349.5 474.0 206.5 28.4 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 353.5 490.8 Td (Same product/class, different component) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 456.9 119.6 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 462.4 Td (profile.php XSS \(2025\)) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 175.6 456.9 173.9 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 179.6 462.4 Td (Stored XSS in BPMS) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 349.5 456.9 206.5 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 353.5 462.4 Td (Same product/class, different component) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 440.9 Td (No reflected-XSS CVE was found for this exact sink \(NVD/MITRE/VulDB/cvefeed, 2026-10-30\). Honest) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 427.5 Td (duplicate risk: the parameter already has an SQLi CVE and XSS is systemic in this product, so a CNA) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 414.1 Td (may view a standalone XSS CVE here as low-value or duplicate-adjacent. Best treated as a distinct) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 400.7 Td (sink within a known systemic weakness.) Tj ET Q
+0.11 0.22 0.44 rg 50.0 374.3 3.0 19.0 re f
+q 0.07 0.13 0.27 rg BT /F2 14.5 Tf 60.0 377.3 Td (12  Remediation & Secure Code) Tj ET Q
+0.95 0.96 0.99 rg 0.8 0.84 0.92 RG 0.6 w 56.0 293.3 500.0 70.0 re B
+0.23 0.36 0.55 rg 56.0 293.3 3.0 70.0 re f
+q 0.45 0.47 0.52 rg BT /F4 8.3 Tf 63.0 348.0 Td (// Before \(admin/search-invoices.php:81\)) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 63.0 336.8 Td (<) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 68.0 336.8 Td (h4) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 77.9 336.8 Td (>) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 82.9 336.8 Td (Result) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 112.8 336.8 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 117.8 336.8 Td (against) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 152.6 336.8 Td ( ) Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 157.6 336.8 Td ("<?php echo $sdata;?>") Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 267.2 336.8 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 272.2 336.8 Td (keyword) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 307.0 336.8 Td (</) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 317.0 336.8 Td (h4) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 326.9 336.8 Td (>) Tj ET Q
+q 0.45 0.47 0.52 rg BT /F4 8.3 Tf 63.0 325.6 Td (// After - context-aware HTML encoding) Tj ET Q
+1.0 0.93 0.68 rg 60.0 311.9 492.0 11.2 re f
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 63.0 314.4 Td (<) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 68.0 314.4 Td (h4) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 77.9 314.4 Td (>) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 82.9 314.4 Td (Result) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 112.8 314.4 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 117.8 314.4 Td (against) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 152.6 314.4 Td ( ) Tj ET Q
+q 0.13 0.46 0.25 rg BT /F4 8.3 Tf 157.6 314.4 Td ("<?php echo htmlspecialchars\($sdata, ENT_QUOTES|ENT_SUBSTITUTE,'UTF-8'\); ?>") Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 536.1 314.4 Td ( ) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 541.1 314.4 Td (k) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 63.0 303.2 Td (eyword) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 92.9 303.2 Td (</) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 102.8 303.2 Td (h4) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F4 8.3 Tf 112.8 303.2 Td (>) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 277.3 Td (Also: add a per-session CSRF token to the search form; set HttpOnly/Secure/SameSite=Lax on) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 263.9 Td (PHPSESSID; add CSP script-src 'self'. Use context-specific encoding \(HTML / JS / URL\) - not one) Tj ET Q
+q 0.12 0.14 0.18 rg BT /F1 10.0 Tf 56.0 250.5 Td (generic sanitizer. Parameterize the SQL query to close the separate SQLi.) Tj ET Q
+0.11 0.22 0.44 rg 50.0 224.1 3.0 19.0 re f
+q 0.07 0.13 0.27 rg BT /F2 14.5 Tf 60.0 227.1 Td (13  Verification, Disclosure & CVE Readiness) Tj ET Q
+0.11 0.22 0.44 rg 56.0 195.9 500.0 17.2 re f
+0.7 0.74 0.8 RG 0.5 w 56.0 195.9 136.4 17.2 re S
+q 1 1 1 rg BT /F2 8.6 Tf 60.0 201.5 Td (Item) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 192.4 195.9 363.6 17.2 re S
+q 1 1 1 rg BT /F2 8.6 Tf 196.4 201.5 Td (Conclusion) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 178.7 136.4 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 184.3 Td (Reflected input) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 192.4 178.7 363.6 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 196.4 184.3 Td (Confirmed unescaped \(server-rendered script context\)) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 161.5 136.4 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 167.1 Td (Browser execution) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 192.4 161.5 363.6 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 196.4 167.1 Td (NOT verified in-lab \(no browser\) - highly likely by analysis) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 144.3 136.4 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 149.9 Td (Affected product) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 192.4 144.3 363.6 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 196.4 149.9 Td (PHPGurukul BPMS v1.x) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 127.2 136.4 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 132.7 Td (Authentication) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 192.4 127.2 363.6 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 196.4 132.7 Td (Admin required; delivery via CSRF) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 110.0 136.4 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 115.6 Td (Demonstrated impact) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 192.4 110.0 363.6 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 196.4 115.6 Td (Script in admin origin \(Low-Medium\)) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 92.8 136.4 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 98.4 Td (Duplicate risk) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 192.4 92.8 363.6 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 196.4 98.4 Td (Moderate \(same param has SQLi CVE; XSS systemic\)) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 75.6 136.4 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 81.2 Td (CVE eligibility) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 192.4 75.6 363.6 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 196.4 81.2 Td (Potential, with duplicate risk - insufficient for standalone novelty) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 56.0 58.4 136.4 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 60.0 64.0 Td (More evidence needed) Tj ET Q
+0.7 0.74 0.8 RG 0.5 w 192.4 58.4 363.6 17.2 re S
+q 0.12 0.14 0.18 rg BT /F1 8.6 Tf 196.4 64.0 Td (Browser screenshot of executed alert\(\); confirm exact sink unpublished) Tj ET Q
+
+endstream
+endobj
+11 0 obj
+<< /Length 873 >>
+stream
+0.23 0.36 0.55 RG 0.6 w 56.0 748.0 m 556.0 748.0 l S
+q 0.07 0.13 0.27 rg BT /F2 8 Tf 56.0 752.0 Td (F-NEW-02  Reflected XSS - search-invoices.php) Tj ET Q
+q 0.45 0.47 0.52 rg BT /F1 8 Tf 436.0 752.0 Td (PHPGurukul BPMS - DRAFT) Tj ET Q
+0.23 0.36 0.55 RG 0.6 w 56.0 40 m 556.0 40 l S
+q 0.45 0.47 0.52 rg BT /F1 8 Tf 56.0 30 Td (Confidential - authorized lab assessment) Tj ET Q
+q 0.45 0.47 0.52 rg BT /F1 8 Tf 486.0 30 Td (Page 7 of 7) Tj ET Q
+q 0.45 0.47 0.52 rg BT /F1 9.2 Tf 56.0 718.8 Td (Retest after fix: Step-2 response must show &lt;script&gt; entity-encoded and no alert\(\); CSRF token) Tj ET Q
+q 0.45 0.47 0.52 rg BT /F1 9.2 Tf 56.0 706.5 Td (enforced; cookie carries HttpOnly/Secure/SameSite. Disclose to PHPGurukul \(coordinated\); do not publish a) Tj ET Q
+q 0.45 0.47 0.52 rg BT /F1 9.2 Tf 56.0 694.1 Td (working PoC pre-fix. DRAFT for human review.) Tj ET Q
+
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 32 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 5 0 R >>
+endobj
+13 0 obj
+<< /Type /Page /Parent 32 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 6 0 R /Annots [19 0 R 20 0 R 21 0 R 22 0 R 23 0 R 24 0 R 25 0 R 26 0 R 27 0 R 28 0 R 29 0 R 30 0 R 31 0 R] >>
+endobj
+14 0 obj
+<< /Type /Page /Parent 32 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 7 0 R >>
+endobj
+15 0 obj
+<< /Type /Page /Parent 32 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 8 0 R >>
+endobj
+16 0 obj
+<< /Type /Page /Parent 32 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 9 0 R >>
+endobj
+17 0 obj
+<< /Type /Page /Parent 32 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 10 0 R >>
+endobj
+18 0 obj
+<< /Type /Page /Parent 32 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 1 0 R /F2 2 0 R /F3 3 0 R /F4 4 0 R >> >> /Contents 11 0 R >>
+endobj
+19 0 obj
+<< /Type /Annot /Subtype /Link /Rect [56.0 709.0 556.0 723.0] /Border [0 0 0] /A << /S /GoTo /D [14 0 R /XYZ 56 734.0 0] >> >>
+endobj
+20 0 obj
+<< /Type /Annot /Subtype /Link /Rect [56.0 689.0 556.0 703.0] /Border [0 0 0] /A << /S /GoTo /D [14 0 R /XYZ 56 538.2 0] >> >>
+endobj
+21 0 obj
+<< /Type /Annot /Subtype /Link /Rect [56.0 669.0 556.0 683.0] /Border [0 0 0] /A << /S /GoTo /D [14 0 R /XYZ 56 328.4 0] >> >>
+endobj
+22 0 obj
+<< /Type /Annot /Subtype /Link /Rect [56.0 649.0 556.0 663.0] /Border [0 0 0] /A << /S /GoTo /D [14 0 R /XYZ 56 254.2 0] >> >>
+endobj
+23 0 obj
+<< /Type /Annot /Subtype /Link /Rect [56.0 629.0 556.0 643.0] /Border [0 0 0] /A << /S /GoTo /D [15 0 R /XYZ 56 506.0 0] >> >>
+endobj
+24 0 obj
+<< /Type /Annot /Subtype /Link /Rect [56.0 609.0 556.0 623.0] /Border [0 0 0] /A << /S /GoTo /D [15 0 R /XYZ 56 376.2 0] >> >>
+endobj
+25 0 obj
+<< /Type /Annot /Subtype /Link /Rect [56.0 589.0 556.0 603.0] /Border [0 0 0] /A << /S /GoTo /D [15 0 R /XYZ 56 257.0 0] >> >>
+endobj
+26 0 obj
+<< /Type /Annot /Subtype /Link /Rect [56.0 569.0 556.0 583.0] /Border [0 0 0] /A << /S /GoTo /D [16 0 R /XYZ 56 498.0 0] >> >>
+endobj
+27 0 obj
+<< /Type /Annot /Subtype /Link /Rect [56.0 549.0 556.0 563.0] /Border [0 0 0] /A << /S /GoTo /D [16 0 R /XYZ 56 278.8 0] >> >>
+endobj
+28 0 obj
+<< /Type /Annot /Subtype /Link /Rect [56.0 529.0 556.0 543.0] /Border [0 0 0] /A << /S /GoTo /D [16 0 R /XYZ 56 144.8 0] >> >>
+endobj
+29 0 obj
+<< /Type /Annot /Subtype /Link /Rect [56.0 509.0 556.0 523.0] /Border [0 0 0] /A << /S /GoTo /D [17 0 R /XYZ 56 585.9 0] >> >>
+endobj
+30 0 obj
+<< /Type /Annot /Subtype /Link /Rect [56.0 489.0 556.0 503.0] /Border [0 0 0] /A << /S /GoTo /D [17 0 R /XYZ 56 401.3 0] >> >>
+endobj
+31 0 obj
+<< /Type /Annot /Subtype /Link /Rect [56.0 469.0 556.0 483.0] /Border [0 0 0] /A << /S /GoTo /D [17 0 R /XYZ 56 251.1 0] >> >>
+endobj
+32 0 obj
+<< /Type /Pages /Count 7 /Kids [12 0 R 13 0 R 14 0 R 15 0 R 16 0 R 17 0 R 18 0 R] >>
+endobj
+33 0 obj
+<< /Type /Catalog /Pages 32 0 R >>
+endobj
+xref
+0 34
+0000000000 65535 f 
+0000000015 00000 n 
+0000000112 00000 n 
+0000000214 00000 n 
+0000000319 00000 n 
+0000000414 00000 n 
+0000003391 00000 n 
+0000005982 00000 n 
+0000011657 00000 n 
+0000023355 00000 n 
+0000044203 00000 n 
+0000055162 00000 n 
+0000056087 00000 n 
+0000056245 00000 n 
+0000056504 00000 n 
+0000056662 00000 n 
+0000056820 00000 n 
+0000056978 00000 n 
+0000057137 00000 n 
+0000057296 00000 n 
+0000057439 00000 n 
+0000057582 00000 n 
+0000057725 00000 n 
+0000057868 00000 n 
+0000058011 00000 n 
+0000058154 00000 n 
+0000058297 00000 n 
+0000058440 00000 n 
+0000058583 00000 n 
+0000058726 00000 n 
+0000058869 00000 n 
+0000059012 00000 n 
+0000059155 00000 n 
+0000059256 00000 n 
+trailer
+<< /Size 34 /Root 33 0 R >>
+startxref
+59307
+%%EOF
